@@ -4,8 +4,13 @@
 基于springboot的csu超级商城项目后端接口部分
 
 #### Software Architecture
-Software architecture description
-
+后端用到的主要技术栈：
+JWT：登录鉴权
+JPA：持久层框架（适用于需求稳定且不涉及到复杂查询的项目）
+ElasticSearch: 搜索引擎
+SpringBoot: WEB框架
+mysql：数据存储
+redis：缓存
 #### Installation
 
 1.  xxxx
