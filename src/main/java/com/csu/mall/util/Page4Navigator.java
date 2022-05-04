@@ -1,4 +1,4 @@
-package com.csu.mall.utill;
+package com.csu.mall.util;
 /*先获得jpa提供的分页对象，再对分页对象进行二次封装 ，再根据Pageable传入Page对象中获取结果page*/
 
 import org.springframework.data.domain.Page;

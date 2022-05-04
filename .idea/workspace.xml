@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="030ef199-4ab9-4cd0-b0a8-c748dc592d76" name="Default Changelist" comment="" />
+    <list default="true" id="030ef199-4ab9-4cd0-b0a8-c748dc592d76" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/common/CONSTANT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/dto/UpdateUserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/util/CORSFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/util/GloabalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/util/MD5Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/util/TokenCacheUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hs_err_pid16964.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hs_err_pid20692.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/replay_pid16964.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/replay_pid20692.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/csu/mall/common/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/common/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/csu/mall/common/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/common/ResultCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/csu/mall/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/csu/mall/persistence/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/persistence/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/csu/mall/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/pojo/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/csu/mall/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/csu/mall/utill/Page4Navigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/util/Page4Navigator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/csu/mall/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/csu/mall/UserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/common/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/csu/mall/common/Result.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/common/ResultCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/csu/mall/common/ResultCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/csu/mall/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/persistence/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/csu/mall/persistence/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/csu/mall/pojo/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/csu/mall/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/utill/Page4Navigator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/csu/mall/UserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/csu/mall/UserTest.class" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,32 +45,27 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/service/impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/Application.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="440">
+              <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#6483#6484#0" expanded="true" />
+                <element signature="e#6537#6538#0" expanded="true" />
+                <element signature="e#6615#6616#0" expanded="true" />
+                <element signature="e#6678#6679#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/csu/mall/UserTest.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/util/MD5Util.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
+            <state relative-caret-position="252">
               <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -49,19 +75,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yaml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/util/GloabalExceptionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+            <state relative-caret-position="270">
+              <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/pojo/User.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/util/Page4Navigator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+            <state relative-caret-position="160">
+              <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="94">
+              <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,8 +113,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/persistence/UserRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+            <state relative-caret-position="180">
+              <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,23 +122,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/utill/Page4Navigator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-140">
-              <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+            <state relative-caret-position="283">
+              <caret line="125" column="5" lean-forward="true" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1587#1588#0" expanded="true" />
+                <element signature="e#1636#1637#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/dto/UpdateUserDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -106,19 +149,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/common/ResultCode.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/pojo/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/common/Result.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+            <state relative-caret-position="190">
+              <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -136,24 +170,50 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>code</find>
+      <find>status</find>
+      <find>Resultcode</find>
+      <find>ResponseCode</find>
+      <find>CommonResponse</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>status</replace>
+      <replace>code</replace>
+      <replace>ResultCode</replace>
+      <replace>Result</replace>
+    </replaceStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/persistence/UserRepository.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/controller/Usercontroller.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/utill/Page4Navigator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/common/Result.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/common/ResultCode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/Application.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/pojo/User.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yaml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/common/ResultCode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/common/CommonResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/common/Result.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/utill/GloabalExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/utill/CORSFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/utill/JWTUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/pojo/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/utill/MD5Util.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/util/MD5Util.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/service/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/common/CONSTANT.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/util/TokenCacheUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/csu/mall/UserTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/persistence/UserRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/dto/UpdateUserDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -170,6 +230,22 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="csu_super_mall" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="csu_super_mall" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
   <component name="MavenRunner">
     <option name="jreName" value="1.8" />
   </component>
@@ -179,13 +255,15 @@
     <option name="width" value="1938" />
     <option name="height" value="1048" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -258,7 +336,7 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="csu" type="462c0819:PsiDirectoryNode" />
               <item name="mall" type="462c0819:PsiDirectoryNode" />
-              <item name="persistence" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="csu_super_mall" type="b2602c69:ProjectViewProjectNode" />
@@ -276,67 +354,50 @@
               <item name="csu_super_mall" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csu_super_mall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csu_super_mall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csu_super_mall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csu_super_mall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csu_super_mall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csu_super_mall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csu_super_mall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csu_super_mall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="csu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csu_super_mall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csu_super_mall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="csu" type="462c0819:PsiDirectoryNode" />
               <item name="mall" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="csu_super_mall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="csu_super_mall" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/csu/mall/common" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../csustore-api-dev" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="spring.boot" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.csu.mall.dto" />
+      <recent name="com.csu.mall.util" />
+      <recent name="com.csu.mall.utill" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Projects\springboot_study\csu_super_mall\src\main\java\com\csu\mall\common" />
       <recent name="E:\Projects\springboot_study\csu_super_mall\src\main\java\com\csu\mall\utill" />
+      <recent name="E:\Projects\springboot_study\csu_super_mall\src\main\java\com\csu\mall\common" />
       <recent name="E:\Projects\springboot_study\csu_super_mall\src\main\java\com\csu\mall\pojo" />
     </key>
   </component>
@@ -352,7 +413,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserTest.get">
+  <component name="RunManager" selected="Spring Boot.Application">
     <configuration name="UserTest.addUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="csu_super_mall" />
       <extension name="coverage">
@@ -385,6 +446,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserTest.updateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="csu_super_mall" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.csu.mall.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.csu.mall" />
+      <option name="MAIN_CLASS_NAME" value="com.csu.mall.UserTest" />
+      <option name="METHOD_NAME" value="updateUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="csu_super_mall" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.csu.mall.Application" />
@@ -394,6 +471,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserTest.updateUser" />
         <item itemvalue="JUnit.UserTest.get" />
         <item itemvalue="JUnit.UserTest.addUser" />
       </list>
@@ -409,20 +487,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1649473917346</updated>
-      <workItem from="1649473920967" duration="17951000" />
+      <workItem from="1649473920967" duration="22701000" />
+      <workItem from="1649514877292" duration="484000" />
+      <workItem from="1649743423896" duration="6612000" />
+      <workItem from="1649750826999" duration="1727000" />
+      <workItem from="1651665904984" duration="3631000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UserTest_get - 2022.04.09 at 17h 34m 58s.xml">
-      <configuration name="UserTest.get" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserTest_get - 2022.04.09 at 18h 21m 30s.xml">
-      <configuration name="UserTest.get" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserTest_get - 2022.04.09 at 18h 22m 18s.xml">
-      <configuration name="UserTest.get" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="UserTest_get - 2022.04.09 at 18h 22m 46s.xml">
       <configuration name="UserTest.get" configurationId="JUnit" />
     </history-entry>
@@ -435,48 +508,76 @@
     <history-entry file="UserTest_get - 2022.04.09 at 18h 27m 51s.xml">
       <configuration name="UserTest.get" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="UserTest_get - 2022.04.12 at 14h 09m 28s.xml">
+      <configuration name="UserTest.get" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTest_updateUser - 2022.04.12 at 15h 46m 57s.xml">
+      <configuration name="UserTest.updateUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTest_get - 2022.04.12 at 15h 47m 15s.xml">
+      <configuration name="UserTest.get" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTest_updateUser - 2022.04.12 at 15h 47m 45s.xml">
+      <configuration name="UserTest.updateUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTest_updateUser - 2022.04.12 at 15h 48m 51s.xml">
+      <configuration name="UserTest.updateUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTest_updateUser - 2022.04.12 at 15h 51m 17s.xml">
+      <configuration name="UserTest.updateUser" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17951000" />
+    <option name="totallyTimeSpent" value="35155000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Designer" />
-      <window_info id="Image Layers" />
-      <window_info id="Capture Tool" />
-      <window_info id="UI Designer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Web" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26174498" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Spring" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.43589744" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.32954547" />
-      <window_info anchor="bottom" id="Java Enterprise" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Reviews" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4985755" visible="true" weight="0.27315435" />
+      <window_info id="Structure" order="1" sideWeight="0.5014245" side_tool="true" weight="0.29932886" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.52272725" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.36039886" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="News Feed" />
-      <window_info anchor="right" id="Bean Validation" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.477208" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32954547" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="Reviews" order="15" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.3295302" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="News Feed" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Bean Validation" order="10" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,47 +586,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/utill/Page4Navigator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-140">
-          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/common/ResultCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/common/Result.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.5.6/spring-data-commons-2.5.6.jar!/org/springframework/data/repository/CrudRepository.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/Application.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -537,46 +597,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/service/UserService.java">
+    <entry file="file://$PROJECT_DIR$/replay_pid16964.log" />
+    <entry file="file://$PROJECT_DIR$/hs_err_pid16964.log" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/util/CORSFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1349#1350#0" expanded="true" />
-            <element signature="e#1403#1404#0" expanded="true" />
-            <element signature="e#1481#1482#0" expanded="true" />
-            <element signature="e#1538#1539#0" expanded="true" />
-            <element signature="e#1610#1611#0" expanded="true" />
-            <element signature="e#1651#1652#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        <state relative-caret-position="400">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/pojo/User.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/common/Result.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        <state relative-caret-position="220">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#621#622#0" expanded="true" />
+            <element signature="e#687#688#0" expanded="true" />
+            <element signature="e#896#897#0" expanded="true" />
+            <element signature="e#967#968#0" expanded="true" />
+            <element signature="e#1482#1483#0" expanded="true" />
+            <element signature="e#1533#1534#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/utill/JWTUtils.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/csu/mall/UserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/util/TokenCacheUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.5.6/spring-data-commons-2.5.6.jar!/org/springframework/data/repository/CrudRepository.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/common/CONSTANT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/common/ResultCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2060">
+          <caret line="103" column="35" selection-start-line="103" selection-start-column="35" selection-end-line="103" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/persistence/UserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/dto/UpdateUserDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
-          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -585,17 +699,83 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        <state relative-caret-position="160">
+          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/csu/mall/UserTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
+        <state relative-caret-position="94">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/pojo/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/util/Page4Navigator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/util/GloabalExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/util/MD5Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
           <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6483#6484#0" expanded="true" />
+            <element signature="e#6537#6538#0" expanded="true" />
+            <element signature="e#6615#6616#0" expanded="true" />
+            <element signature="e#6678#6679#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="125" column="5" lean-forward="true" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1587#1588#0" expanded="true" />
+            <element signature="e#1636#1637#0" expanded="true" />
           </folding>
         </state>
       </provider>

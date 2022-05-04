@@ -1,7 +1,7 @@
 package com.csu.mall;
 
 import com.csu.mall.pojo.User;
-import com.csu.mall.service.UserService;
+import com.csu.mall.service.impl.UserServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class UserTest {
 
     @Autowired
-    private UserService service;
+    private UserServiceImpl service;
 
     @Test
     public void get() {
@@ -33,5 +33,15 @@ public class UserTest {
         System.out.println("添加用户成功！");
     }
 
+    @Test
+    public void updateUser() {
+        User user = service.getByName("test");
+        System.out.println(user);
+        user.setPassword("456");
+        service.add(user);
+        System.out.println("修改用户成功！");
+        User user1 = service.getByName("test");
+        System.out.println(user1);
+    }
 
 }

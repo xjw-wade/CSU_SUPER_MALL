@@ -1,58 +1,28 @@
 package com.csu.mall.service;
 
-import com.csu.mall.persistence.UserRepository;
+import com.csu.mall.common.Result;
 import com.csu.mall.pojo.User;
-import com.csu.mall.utill.Page4Navigator;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheConfig;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.stereotype.Service;
+import com.csu.mall.util.Page4Navigator;
 
-@Service
-@CacheConfig(cacheNames="users")
-public class UserService {
-    @Autowired
-    UserRepository userRepository;
-
+public interface UserService {
+    //用户登录
+    Result<User> login(String username, String password);
+    //注册时检查字段是否可用
+    Result<String> checkField(String fieldName, String fieldValue);
+    //用户注册
+    Result<String> register(User user);
+    //获取忘记密码的问题
+    Result<String> getForgetQuestion(String username);
+    //校验忘记密码的问题和答案是否正确
+    Result<String> checkForgetAnswer(String username, String question,String answer);
+    //通过忘记密码的问题答案重置密码
+    Result<String> resetForgetPassword(String username, String newPassword, String forgetToken);
+    //登录状态下重置密码
+    Result<String> resetPassword(String oldPassword, String newPassword, User user);
+    //登录状态下更新用户信息
+    Result<String> updateUserInfo(User user);
+    //登录状态下获取用户详细信息
+    Result<User> getUserDetail(Integer userId);
     //返回分页对象及其数据
-    @Cacheable(key="'users-page-'+#p0+ '-' + #p1")
-    public Page4Navigator<User> list(int start,int size,int navigatePages){
-        Sort sort = Sort.by(Sort.Direction.ASC,"id");
-        Pageable pageable = PageRequest.of(start, size,sort);
-        Page pageFromJPA =userRepository.findAll(pageable);
-        return new Page4Navigator<User>(pageFromJPA,navigatePages);
-    }
-
-    //用于校验用户是否存在
-    public boolean isExist(String name){
-        User user= getByName(name);
-        return null!=user;
-    }
-
-    @Cacheable(key="'users-one-name-'+ #p0")
-    public User getByName(String name) {
-        return userRepository.findByName(name);
-    }
-
-    @Cacheable(key="'users-one-id-'+ #p0")
-    public User getById(int id) {
-        return userRepository.findById(id).orElse(null);
-    }
-
-    //添加用户
-    @CacheEvict(allEntries=true)
-    public void add(User user){
-        userRepository.save(user);
-    }
-
-    //校验用户
-    @Cacheable(key="'users-one-name-'+ #p0 +'-password-'+ #p1")
-    public User get(String name, String password){
-        return userRepository.getByNameAndPassword(name,password);
-    }
+    Result<Page4Navigator<User>> pageBreak(int start,int size,int navigatePages);
 }

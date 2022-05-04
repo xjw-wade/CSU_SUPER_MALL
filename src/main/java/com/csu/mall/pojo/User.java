@@ -35,6 +35,8 @@ public class User {
     private String email;
     @NotBlank(message = "电话号码不能为空")
     private String phone;
+    private String question;
+    private String answer;
 
     private Integer role;
     private LocalDateTime createTime;

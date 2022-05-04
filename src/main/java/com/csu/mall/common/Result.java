@@ -1,80 +1,65 @@
 package com.csu.mall.common;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.Getter;
 
-import java.io.Serializable;
-
+@Getter
 @JsonIgnoreProperties(value = {"handler","hibernateLazyInitializer","fieldHandler"})
-public class Result<T> implements Serializable {
-    private String code;
-    private String msg;
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class Result<T> {
+    private int status;
+    private String message;
     private T data;
 
-    private Result(T data) {
+    @JsonIgnore
+    public boolean isSuccess() {
+        return this.status == ResultCode.SUCCESS.getCode();
+    }
+
+    public static <T> Result<T> createForSuccess() {
+        return new Result<T>(ResultCode.SUCCESS.getCode());
+    }
+
+    public static <T> Result<T> createForSuccessMessage(String message) {
+        return new Result<>(ResultCode.SUCCESS.getCode(), message);
+    }
+
+    public static <T> Result<T> createForSuccess(T data) {
+        return new Result<>(ResultCode.SUCCESS.getCode(), data);
+    }
+
+    public static <T> Result<T> createForSuccess(String message, T data) {
+        return new Result<T>(ResultCode.SUCCESS.getCode(), message, data);
+    }
+
+    public static <T> Result<T> createForError() {
+        return new Result<T>(ResultCode.ERROR.getCode(), ResultCode.ERROR.getMsg());
+    }
+
+    public static <T> Result<T> createForError(String message) {
+        return new Result<T>(ResultCode.ERROR.getCode(), message);
+    }
+
+    public static <T> Result<T> createForError(int code, String message) {
+        return new Result<T>(code, message);
+    }
+
+    private Result(int status) {
+        this.status = status;
+    }
+    private Result(int status, String message) {
+        this.status = status;
+        this.message = message;
+    }
+    private Result(int status, String message, T data) {
+        this.status = status;
+        this.message = message;
         this.data = data;
     }
-
-    public Result() {
-    }
-
-    public static Result success() {
-        Result tResult = new Result<>();
-        tResult.setCode(ResultCode.SUCCESS.code);
-        tResult.setMsg(ResultCode.SUCCESS.msg);
-        return tResult;
-    }
-
-    public static <T> Result<T> success(T data) {
-        Result<T> tResult = new Result<>(data);
-        tResult.setCode(ResultCode.SUCCESS.code);
-        tResult.setMsg(ResultCode.SUCCESS.msg);
-        return tResult;
-    }
-
-    public static Result error() {
-        Result tResult = new Result<>();
-        tResult.setCode(ResultCode.ERROR.code);
-        tResult.setMsg(ResultCode.ERROR.msg);
-        return tResult;
-    }
-
-    public static <T> Result<T> error(T data) {
-        Result tResult = new Result<>(data);
-        tResult.setCode(ResultCode.ERROR.code);
-        tResult.setMsg(ResultCode.ERROR.msg);
-        return tResult;
-    }
-
-
-
-    public static Result error(String code, String msg) {
-        Result tResult = new Result<>();
-        tResult.setCode(code);
-        tResult.setMsg(msg);
-        return tResult;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
+    private Result(int status, T data) {
+        this.status = status;
         this.data = data;
     }
 }
