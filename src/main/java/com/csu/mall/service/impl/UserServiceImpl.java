@@ -198,21 +198,18 @@ public class UserServiceImpl implements UserService {
     //返回分页对象及其数据
     @Cacheable(key="'users-page-'+#p0+ '-' + #p1")
     @Override
-    public Result<Page4Navigator<User>> pageBreak(int start,int size,int navigatePages){
+    public Page4Navigator<User> pageBreak(int start,int size,int navigatePages){
         Sort sort = Sort.by(Sort.Direction.ASC,"id");
         Pageable pageable = PageRequest.of(start, size,sort);
         Page pageFromJPA =userRepository.findAll(pageable);
-        return Result.createForSuccess(new Page4Navigator<User>(pageFromJPA,navigatePages));
+        return new Page4Navigator<User>(pageFromJPA,navigatePages);
     }
 
-    //用于校验用户是否存在
-    public boolean isExist(String name){
-        User user= getByName(name);
-        return null!=user;
-    }
+
 
     @Cacheable(key="'users-one-name-'+ #p0")
     public User getByName(String name) {
+        System.out.println(name);
         return userRepository.findByName(name);
     }
 

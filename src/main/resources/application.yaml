@@ -1,6 +1,6 @@
 #配置Server基本属性
 server:
-  port: 8888
+  port: 8887
   servlet:
     context-path: /csu_super_mall #配置上下文路径，当前路径为本地路径
 

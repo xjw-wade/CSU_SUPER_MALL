@@ -121,7 +121,13 @@ public class UserController {
             @RequestParam(value = "start", defaultValue = "0") int start,
             @RequestParam(value = "size", defaultValue = "5") int size){
         start = start<0?0:start;
-        Result<Page4Navigator<User>>  page = userService.pageBreak(start,size,5);
-        return page;
+        Page4Navigator<User>  page = userService.pageBreak(start,size,5);
+        return Result.createForSuccess(page);
+    }
+
+    //通过姓名查询用户信息
+    @GetMapping("/getByName")
+    public Result<User> getByName(@RequestParam @Validated @NotBlank(message = "用户名不能为空") String username) {
+        return Result.createForSuccess(userService.getByName(username));
     }
 }

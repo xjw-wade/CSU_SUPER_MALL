@@ -33,15 +33,5 @@ public class UserTest {
         System.out.println("添加用户成功！");
     }
 
-    @Test
-    public void updateUser() {
-        User user = service.getByName("test");
-        System.out.println(user);
-        user.setPassword("456");
-        service.add(user);
-        System.out.println("修改用户成功！");
-        User user1 = service.getByName("test");
-        System.out.println(user1);
-    }
 
 }

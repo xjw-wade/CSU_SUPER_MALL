@@ -24,5 +24,7 @@ public interface UserService {
     //登录状态下获取用户详细信息
     Result<User> getUserDetail(Integer userId);
     //返回分页对象及其数据
-    Result<Page4Navigator<User>> pageBreak(int start,int size,int navigatePages);
+    Page4Navigator<User> pageBreak(int start,int size,int navigatePages);
+    //根据姓名返回用户对象
+    User getByName(String name);
 }
