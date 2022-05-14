@@ -1,14 +1,16 @@
-package com.ozm.tmall.entity.dao;
+package com.csu.mall.persistence;
 
-import com.ozm.tmall.entity.pojo.Order;
-import com.ozm.tmall.entity.pojo.OrderItem;
-import com.ozm.tmall.entity.pojo.Product;
-import com.ozm.tmall.entity.pojo.User;
+import com.csu.mall.pojo.Order;
+import com.csu.mall.pojo.OrderItem;
+import com.csu.mall.pojo.Product;
+import com.csu.mall.pojo.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface OrderItemDAO extends JpaRepository<OrderItem,Integer> {
+@Repository
+public interface OrderItemRepository extends JpaRepository<OrderItem,Integer> {
     //一个订单可能包含多个商品
     List<OrderItem> findByOrderOrderByIdDesc(Order order);
 

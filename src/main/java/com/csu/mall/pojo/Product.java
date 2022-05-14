@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.elasticsearch.annotations.Document;
 
 
 import javax.persistence.*;
@@ -16,6 +17,8 @@ import java.util.List;
 @Entity
 @Table(name="product")
 @JsonIgnoreProperties({"handler","hibernateLazyInitializer"})
+//告诉es如何匹配此类
+@Document(indexName = "csu_super_mall")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

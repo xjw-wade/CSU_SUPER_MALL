@@ -23,3 +23,23 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     # 控制台显示SQL
     show-sql: true
+
+  #整合redis
+  redis:
+    host: 106.55.173.219
+    #    host: 192.168.31.247
+    port: 16381
+    database: 1
+    lettuce:
+      pool:
+        max-active: 1000
+        max-idle: 500
+        max-wait: 500
+    timeout: 5000
+
+  cache:
+    type: redis
+
+  elasticsearch:
+    rest:
+      uris: http://106.55.173.219:19200

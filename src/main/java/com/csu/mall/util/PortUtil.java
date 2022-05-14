@@ -1,4 +1,4 @@
-package com.ozm.tmall.util;
+package com.csu.mall.util;
 import java.io.IOException;
 import java.net.ServerSocket;
 import javax.swing.JOptionPane;

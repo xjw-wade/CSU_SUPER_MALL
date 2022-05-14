@@ -1,4 +1,4 @@
-package com.ozm.tmall.util;
+package com.csu.mall.util;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
