@@ -7,6 +7,10 @@ package com.csu.mall.es;
 // 如果放在同一个包下，会彼此影响，出现启动异常。
 
 import com.csu.mall.pojo.Product;
+import org.apache.lucene.queryparser.flexible.core.builders.QueryBuilder;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,6 +19,6 @@ import org.springframework.stereotype.Repository;
 //用来做ElasticSearch JPA操作的api 跟Redis一样，在主入口程序上标上注解
 @Repository
 public interface ProductESRepository extends ElasticsearchRepository<Product,Integer> {
-
+           Page<Product> findByNameLike(String name);
 }
 

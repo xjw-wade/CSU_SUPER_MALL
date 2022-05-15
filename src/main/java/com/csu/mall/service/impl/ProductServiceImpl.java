@@ -7,11 +7,16 @@ import com.csu.mall.pojo.Product;
 import com.csu.mall.service.*;
 import com.csu.mall.util.Page4Navigator;
 import com.csu.mall.util.SpringContextUtil;
+import org.elasticsearch.index.query.MatchQueryBuilder;
+import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.index.query.functionscore.FunctionScoreQueryBuilder;
+import org.elasticsearch.index.query.functionscore.ScoreFunctionBuilders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -129,16 +134,52 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void setSaleAndReviewNumber(List<Product> products) {
-
+        for (Product product : products)
+            setSaleAndReviewNumber(product);
     }
 
     @Override
     public List<Product> search(String keyword, int start, int size) {
-        return null;
+        /* ------------------       es搜索         ------------------      */
+        //初始化搜索结果到es上
+        initDatabase2ES(start,size);
+        //使用FunctionScoreQueryBuilder优化es搜索结果
+//        FunctionScoreQueryBuilder functionScoreQueryBuilder = QueryBuilders.functionScoreQuery();
+        Sort sort  = Sort.by(Sort.Direction.DESC,"id");
+        Pageable pageable = PageRequest.of(start, size, sort);
+//        //传入es搜索
+
+//        NativeSearchQueryBuilder searchQuery = new NativeSearchQueryBuilder()
+//                .withPageable(pageable)
+//                .withQuery(functionScoreQueryBuilder);
+//        Page<Product> page = productESRepository.search(searchQuery, pageable);
+        MatchQueryBuilder queryBuilder = QueryBuilders.matchQuery("all", "小米");
+        // 执行查询
+        Page<Product> page = this.productESRepository.findByNameLike(keyword);
+        return page.getContent();
+
+        /* ------------------       es搜索         ------------------      */
+
+
+        /* ------------------       普通模糊搜索         ------------------      */
+        //Sort sort = new Sort(Sort.Direction.DESC, "id");
+        //Pageable pageable = new PageRequest(start, size, sort);
+        //List<Product> products =productDAO.findByNameLike("%"+keyword+"%",pageable);
+        //return products;
+        /* ------------------       普通模糊搜索          ------------------      */
     }
 
     @Override
     public void initDatabase2ES(int start, int size) {
-
+        //搜索前试看es中是否存在相应的数据，如果不存在则通过dao从数据库中获取数据然后初始化到es上
+        Pageable pageable = PageRequest.of(start,size);
+        Page<Product> productES = productESRepository.findAll(pageable);
+        if (productES.getContent().isEmpty()){
+            //数据不存在时，通过dao的方式获取数据并存在es上
+            List<Product> products = productRepository.findAll();
+            for (Product product:products){
+                productESRepository.save(product);
+            }
+        }
     }
 }
