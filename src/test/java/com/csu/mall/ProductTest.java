@@ -7,6 +7,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
@@ -27,7 +31,11 @@ public class ProductTest {
 
     @Test
     public void get() {
-        System.out.println(productESRepository.findById(1));
+//        System.out.println(productESRepository.findById(1));
+        Sort sort  = Sort.by(Sort.Direction.DESC,"id");
+        Pageable pageable = PageRequest.of(0, 5, sort);
+        Page<Product> page = this.productESRepository.findByNameLike("战神", pageable);
+        System.out.println(page.getContent());
 
 //        Product product = productService.getById(1);
 //        System.out.println(product);

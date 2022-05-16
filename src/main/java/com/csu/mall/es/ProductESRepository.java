@@ -19,6 +19,7 @@ import org.springframework.stereotype.Repository;
 //用来做ElasticSearch JPA操作的api 跟Redis一样，在主入口程序上标上注解
 @Repository
 public interface ProductESRepository extends ElasticsearchRepository<Product,Integer> {
-           Page<Product> findByNameLike(String name);
+    //通过商品名模糊查询
+    Page<Product> findByNameLike(String name, Pageable pageable);
 }
 

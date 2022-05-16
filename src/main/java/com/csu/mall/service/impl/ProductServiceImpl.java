@@ -153,9 +153,8 @@ public class ProductServiceImpl implements ProductService {
 //                .withPageable(pageable)
 //                .withQuery(functionScoreQueryBuilder);
 //        Page<Product> page = productESRepository.search(searchQuery, pageable);
-        MatchQueryBuilder queryBuilder = QueryBuilders.matchQuery("all", "小米");
         // 执行查询
-        Page<Product> page = this.productESRepository.findByNameLike(keyword);
+        Page<Product> page = this.productESRepository.findByNameLike(keyword, pageable);
         return page.getContent();
 
         /* ------------------       es搜索         ------------------      */
