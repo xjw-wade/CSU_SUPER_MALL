@@ -2,6 +2,7 @@ package com.csu.mall.service.impl;
 
 import com.csu.mall.persistence.CategoryRepository;
 import com.csu.mall.pojo.Category;
+import com.csu.mall.pojo.Product;
 import com.csu.mall.service.CategoryService;
 import com.csu.mall.util.Page4Navigator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,5 +86,23 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public void updateCategory(Category bean) {
         categoryRepository.save(bean);
+    }
+
+    @Override
+    public void removeCategoryFromProduct(List<Category> cs) {
+        for (Category category: cs) {
+            List<Product> productList = category.getProducts();
+            for (Product product:productList) {
+                product.setCategory(null);
+            }
+        }
+    }
+
+    @Override
+    public void removeCategoryFromProduct(Category category) {
+        List<Product> productList = category.getProducts();
+        for (Product product:productList) {
+            product.setCategory(null);
+        }
     }
 }

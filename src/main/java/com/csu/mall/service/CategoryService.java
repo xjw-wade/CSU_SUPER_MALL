@@ -19,6 +19,10 @@ public interface CategoryService {
     Category getCategory(int id);
     //更新商品类别
     void updateCategory(Category bean);
+    //将category中的list<Product>中的Product中的category置空，避免重复Json化
+    void removeCategoryFromProduct(List<Category> cs);
+    //将category中的list<Product>中的Product中的category置空，避免重复Json化
+    void removeCategoryFromProduct(Category category);
 
 
 }
