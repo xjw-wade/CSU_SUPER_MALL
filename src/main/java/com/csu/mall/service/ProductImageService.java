@@ -7,6 +7,10 @@ import com.csu.mall.pojo.ProductImage;
 import java.util.List;
 
 public interface ProductImageService {
+    //创建ProductImageService，提供CRD。
+    //同时还提供了两个常量，分别表示单个图片和详情图片：
+    String type_single = "single";
+    String type_detail = "detail";
     //添加图片
     void addImage(ProductImage bean);
     //查找单个图片列表

@@ -9,6 +9,8 @@ import com.csu.mall.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,6 +26,40 @@ public class ProductController {
     PropertyValueService propertyValueService;
     @Autowired
     ReviewService reviewService;
+
+
+    //添加Product数据
+    //添加数据 接收从前台传过来的json数据
+    @PostMapping("/add_product")
+    public Result<Product> add(@RequestBody Product bean)throws Exception{
+        bean.setCreateDate(new Date());
+        productService.addProduct(bean);
+        return Result.createForSuccess(bean);
+    }
+
+    //删除数据
+    @DeleteMapping("/{id}")
+    public Result<String> delete(@PathVariable("id")int id, HttpServletRequest request)
+            throws Exception{
+        productService.deleteProduct(id);
+        return Result.createForSuccess("删除成功");
+    }
+
+    //更新数据
+    @PutMapping("/update_product")
+    public Result<Product> update(@RequestBody Product bean) throws Exception {
+        productService.update(bean);
+        return Result.createForSuccess(bean);
+    }
+
+    //获取单个数据
+    @GetMapping("/products/{id}")
+    public Result<Product> get(@PathVariable("id") int id) throws Exception {
+        Product bean=productService.getById(id);
+        return Result.createForSuccess(bean);
+    }
+
+
 
 
     //产品页映射

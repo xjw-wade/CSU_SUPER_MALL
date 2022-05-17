@@ -16,10 +16,6 @@ import java.util.List;
 @Service
 @CacheConfig(cacheNames="productImages")
 public class ProductImageServiceImpl implements ProductImageService {
-    //创建ProductImageService，提供CRD。
-    //同时还提供了两个常量，分别表示单个图片和详情图片：
-    public static final String type_single = "single";
-    public static final String type_detail = "detail";
     @Autowired
     ProductImageRepository productImageRepository;
 
