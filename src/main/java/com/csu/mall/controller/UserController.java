@@ -5,12 +5,15 @@ import com.csu.mall.common.Result;
 import com.csu.mall.dto.UpdateUserDTO;
 import com.csu.mall.pojo.User;
 import com.csu.mall.service.UserService;
-import com.csu.mall.service.impl.UserServiceImpl;
+import com.csu.mall.util.CookieUtil;
 import com.csu.mall.util.Page4Navigator;
+import com.csu.mall.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
@@ -20,14 +23,18 @@ import javax.validation.constraints.NotBlank;
 public class UserController {
     @Autowired
     private UserService userService;
+    @Autowired
+    RedisUtil redisUtil;
 
     @PostMapping("login")
     public Result<User> login(@RequestParam @Validated @NotBlank(message = "用户名不能为空") String username,
-                                      @RequestParam @Validated @NotBlank(message = "密码不能为空") String password,
-                                      HttpSession session) {
+                              @RequestParam @Validated @NotBlank(message = "密码不能为空") String password,
+                              HttpSession session, HttpServletResponse httpServletResponse) {
         Result<User> response = userService.login(username, password);
         if (response.isSuccess()) {
-            session.setAttribute(CONSTANT.LOGIN_USER, response.getData());
+            System.out.println("Session ID :" + session.getId());
+            redisUtil.set(session.getId(), response.getData(), 3600);
+            CookieUtil.writeLoginToken(httpServletResponse,session.getId());
         }
         return response;
     }
@@ -80,7 +87,8 @@ public class UserController {
 
     @PostMapping("get_user_detail")
     public Result<User> getUserDetail(HttpSession session){
-        User loginUser = (User) session.getAttribute(CONSTANT.LOGIN_USER);
+        String sessionId = session.getId();
+        User loginUser = (User)redisUtil.get(sessionId);
         if(loginUser == null){
             return Result.createForError("用户未登录");
         }
@@ -90,7 +98,8 @@ public class UserController {
     @PostMapping("update_user_info")
     public Result<User> updateUserInfo(@RequestBody @Valid UpdateUserDTO updateUser,
                                                HttpSession session){
-        User loginUser = (User) session.getAttribute(CONSTANT.LOGIN_USER);
+        String sessionId = session.getId();
+        User loginUser = (User)redisUtil.get(sessionId);
         if(loginUser == null){
             return Result.createForError("用户未登录");
         }
@@ -109,8 +118,10 @@ public class UserController {
     }
 
     @GetMapping("logout")
-    public Result<String> logout(HttpSession session){
-        session.removeAttribute(CONSTANT.LOGIN_USER);
+    public Result<String> logout(HttpSession session, HttpServletRequest request, HttpServletResponse response){
+        String sessionId = session.getId();
+        redisUtil.del(sessionId);
+        CookieUtil.deleteLoginToken(request, response);
         return Result.createForSuccessMessage("退出登录成功");
     }
 
