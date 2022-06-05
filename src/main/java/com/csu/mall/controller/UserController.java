@@ -8,6 +8,7 @@ import com.csu.mall.service.UserService;
 import com.csu.mall.util.CookieUtil;
 import com.csu.mall.util.Page4Navigator;
 import com.csu.mall.util.RedisUtil;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -86,9 +87,14 @@ public class UserController {
     }
 
     @PostMapping("get_user_detail")
-    public Result<User> getUserDetail(HttpSession session){
-        String sessionId = session.getId();
-        User loginUser = (User)redisUtil.get(sessionId);
+    public Result<User> getUserDetail(HttpServletRequest request){
+        //读取sessionID
+        String loginToken = CookieUtil.readLoginToken(request);
+        if(StringUtils.isBlank(loginToken)){
+            return Result.createForError("用户未登录");
+        }
+        //从Redis中获取用户的json数据
+        User loginUser = (User)redisUtil.get(loginToken);
         if(loginUser == null){
             return Result.createForError("用户未登录");
         }
@@ -97,9 +103,13 @@ public class UserController {
 
     @PostMapping("update_user_info")
     public Result<User> updateUserInfo(@RequestBody @Valid UpdateUserDTO updateUser,
-                                               HttpSession session){
-        String sessionId = session.getId();
-        User loginUser = (User)redisUtil.get(sessionId);
+                                       HttpServletRequest request){
+        //读取sessionID
+        String loginToken = CookieUtil.readLoginToken(request);
+        if(StringUtils.isBlank(loginToken)){
+            return Result.createForError("用户未登录");
+        }
+        User loginUser = (User)redisUtil.get(loginToken);
         if(loginUser == null){
             return Result.createForError("用户未登录");
         }
@@ -111,16 +121,20 @@ public class UserController {
         Result<String> result = userService.updateUserInfo(loginUser);
         if(result.isSuccess()){
             loginUser = userService.getUserDetail(loginUser.getId()).getData();
-            session.setAttribute(CONSTANT.LOGIN_USER, loginUser);
+            redisUtil.set(loginToken, loginUser, 3600);
             return Result.createForSuccess(loginUser);
         }
         return Result.createForError(result.getMessage());
     }
 
     @GetMapping("logout")
-    public Result<String> logout(HttpSession session, HttpServletRequest request, HttpServletResponse response){
-        String sessionId = session.getId();
-        redisUtil.del(sessionId);
+    public Result<String> logout(HttpServletRequest request, HttpServletResponse response){
+        //读取sessionID
+        String loginToken = CookieUtil.readLoginToken(request);
+        if(StringUtils.isBlank(loginToken)){
+            return Result.createForError("用户未登录");
+        }
+        redisUtil.del(loginToken);
         CookieUtil.deleteLoginToken(request, response);
         return Result.createForSuccessMessage("退出登录成功");
     }

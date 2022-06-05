@@ -2,6 +2,10 @@ package com.csu.mall.common;
 
 public class CONSTANT {
     public static final String LOGIN_USER = "loginUser";
+    /**
+     redis中session的key
+     */
+    public static final long REDIS_SESSION_EXPIRE = 60 * 60;
 
     public interface USER_FIELDS{
         String USERNAME = "username";
