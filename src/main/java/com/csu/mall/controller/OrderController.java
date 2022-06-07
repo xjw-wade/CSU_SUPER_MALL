@@ -215,6 +215,7 @@ public class OrderController {
         order.setStatus(OrderService.waitPay);
         //将每个orderItem的order设置为当前order
         List<OrderItem> orderItemList = (List<OrderItem>)redisUtil.get(loginToken+"ois");
+        redisUtil.del(loginToken+"ois");
         float total =orderService.sumPrice(order,orderItemList);
 
         Map<String,Object> map = new HashMap<>();
