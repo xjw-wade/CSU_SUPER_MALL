@@ -32,6 +32,8 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     OrderItemService orderItemService;
 
+    //返回分页对象及其数据
+    @Cacheable(key="'orders-page-'+#p0+ '-' + #p1")
     @Override
     public Page4Navigator<Order> orderList(int start, int size, int navigatePages) {
         Sort sort = Sort.by(Sort.Direction.DESC,"id");

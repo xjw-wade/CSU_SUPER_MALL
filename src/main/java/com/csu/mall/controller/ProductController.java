@@ -1,23 +1,22 @@
 package com.csu.mall.controller;
 
 import com.csu.mall.common.Result;
-import com.csu.mall.pojo.Product;
-import com.csu.mall.pojo.ProductImage;
-import com.csu.mall.pojo.PropertyValue;
-import com.csu.mall.pojo.Review;
+import com.csu.mall.persistence.ProductRepository;
+import com.csu.mall.pojo.*;
 import com.csu.mall.service.*;
+import com.csu.mall.util.Page4Navigator;
+import com.csu.mall.util.RedisUtil;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 @RequestMapping(value = "/product")
-public class ProductController {
+public class ProductController implements InitializingBean {
     @Autowired
     ProductService productService;
     @Autowired
@@ -26,7 +25,22 @@ public class ProductController {
     PropertyValueService propertyValueService;
     @Autowired
     ReviewService reviewService;
+    @Autowired
+    ProductRepository productRepository;
+    @Autowired
+    RedisUtil redisUtil;
 
+
+    //获取product_list
+    @GetMapping("/product_list")
+    public Result<Page4Navigator<Product>> list(@RequestParam(value = "start", defaultValue = "0") int start,
+                                                @RequestParam(value = "size", defaultValue = "5")int size) throws Exception{
+        start=start<0?0:start;
+        Page4Navigator<Product> page  = productService.productList(start,size,5);
+        //对ProductImages进行内部赋值
+        productImageService.setFirstProdutImages(page.getContent());
+        return Result.createForSuccess(page);
+    }
 
     //添加Product数据
     //添加数据 接收从前台传过来的json数据
@@ -109,7 +123,20 @@ public class ProductController {
         productImageService.setFirstProdutImages(ps);
         productService.setSaleAndReviewNumber(ps);
         return Result.createForSuccess(ps);
+    }
 
+    /**
+     * 系统初始化的时候做的事情。
+     * 在容器启动时候，检测到了实现了接口InitializingBean之后，
+     */
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        Sort sort = Sort.by(Sort.Direction.DESC, "id");
+        Iterable<Product> productLists = productRepository.findAll(sort);
+        for (Iterator<Product> its = productLists.iterator(); its.hasNext(); ) {
+            Product product = its.next();
+            redisUtil.set(String.valueOf(product.getId()), product.getStock(), 3600);
+        }
     }
 
 }

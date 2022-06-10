@@ -1,21 +1,20 @@
 package com.csu.mall.controller;
 
-
-import com.csu.mall.common.CONSTANT;
 import com.csu.mall.common.Result;
+import com.csu.mall.common.ResultCode;
 import com.csu.mall.pojo.*;
+import com.csu.mall.rabbitmq.MQSender;
+import com.csu.mall.rabbitmq.MiaoshaMessage;
 import com.csu.mall.service.*;
 import com.csu.mall.util.CookieUtil;
 import com.csu.mall.util.Page4Navigator;
 import com.csu.mall.util.RedisUtil;
 import org.apache.commons.lang3.RandomUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.HtmlUtils;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -35,6 +34,68 @@ public class OrderController {
     ReviewService reviewService;
     @Autowired
     RedisUtil redisUtil;
+    @Autowired
+    MQSender mQSender;
+
+    //标记
+    Map <Integer,Boolean>localMap=new HashMap<Integer, Boolean>();
+    //秒杀接口
+    @PostMapping("/sec_kill")
+    public Result<String> doSecKill(@RequestParam(value="productId",defaultValue="0") int productId, HttpServletRequest request) {
+        //读取sessionID
+        String loginToken = CookieUtil.readLoginToken(request);
+        User user = (User)redisUtil.get(loginToken);
+        //内存标记，减少对redis的访问 localMap.put(goodsId,false);
+        boolean over=localMap.getOrDefault(productId, false);
+        if(over) {
+            return Result.createForError(ResultCode.MIAOSHA_OVER_ERROR.getMsg());
+        }
+        //2.预减少库存，减少redis里面的库存
+        //redis分布式锁 10s后自动释放
+        String LOCK_ID = String.valueOf(productId)+ "_lock";
+        boolean lock = redisUtil.getLock(LOCK_ID, 10 * 1000);
+        if (lock) {
+            long stock=redisUtil.decr(String.valueOf(productId),1);
+            //3.判断减少数量1之后的stock，区别于查数据库时候的stock<=0
+            if(stock<0) {
+                //在容量为0的时候，那么就打标记为true
+                localMap.put(productId,true);
+                redisUtil.releaseLock(LOCK_ID);
+                return Result.createForError(ResultCode.MIAOSHA_OVER_ERROR.getMsg());
+            } else {
+                //5.正常请求，入队，发送一个秒杀message到队列里面去，入队之后客户端应该进行轮询。
+                MiaoshaMessage mms=new MiaoshaMessage();
+                mms.setUser(user);
+                mms.setGoodsId(productId);
+                mQSender.sendMiaoshaMessage(mms);
+                redisUtil.releaseLock(LOCK_ID);
+                return Result.createForSuccess("抢购成功!");
+            }
+        }else{
+            while(lock == false){
+                lock = redisUtil.getLock(LOCK_ID, 10 * 1000);
+            }
+            long stock=redisUtil.decr(String.valueOf(productId),1);
+            //3.判断减少数量1之后的stock，区别于查数据库时候的stock<=0
+            if(stock<0) {
+                //在容量为0的时候，那么就打标记为true
+                localMap.put(productId,true);
+                redisUtil.releaseLock(LOCK_ID);
+                return Result.createForError(ResultCode.MIAOSHA_OVER_ERROR.getMsg());
+            } else {
+                //5.正常请求，入队，发送一个秒杀message到队列里面去，入队之后客户端应该进行轮询。
+                MiaoshaMessage mms=new MiaoshaMessage();
+                mms.setUser(user);
+                mms.setGoodsId(productId);
+                mQSender.sendMiaoshaMessage(mms);
+                redisUtil.releaseLock(LOCK_ID);
+                return Result.createForSuccess("抢购成功!");
+            }
+        }
+    }
+
+
+
     @GetMapping("/orders")
     public Result<Page4Navigator<Order>> list(
             @RequestParam(value = "start", defaultValue = "0") int start,

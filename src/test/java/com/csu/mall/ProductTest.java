@@ -13,6 +13,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Iterator;
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ProductTest {
@@ -21,6 +24,9 @@ public class ProductTest {
 
     @Autowired
     ProductESRepository productESRepository;
+
+    @Autowired
+    ProductESRepository productRepository;
 
     @Test
     public void add() {
@@ -39,6 +45,21 @@ public class ProductTest {
 
 //        Product product = productService.getById(1);
 //        System.out.println(product);
+
+    }
+
+    @Test
+    public void getAll() {
+//        System.out.println(productESRepository.findById(1));
+        Sort sort  = Sort.by(Sort.Direction.DESC,"id");
+//        Pageable pageable = PageRequest.of(0, 15, sort);
+//        Page<Product> page = this.productRepository.findAll(pageable);
+        Iterable<Product> productLists = this.productRepository.findAll(sort);
+        for (Iterator<Product> its = productLists.iterator(); its.hasNext(); ) {
+            Product s = its.next();
+            System.out.println(s);
+        }
+//        System.out.println(page.getContent());
 
     }
 }

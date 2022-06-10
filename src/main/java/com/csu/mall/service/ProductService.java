@@ -7,6 +7,8 @@ import com.csu.mall.util.Page4Navigator;
 import java.util.List;
 
 public interface ProductService {
+    //返回产品的分页对象
+    Page4Navigator<Product> productList(int start, int size, int navigatePages);
     //获取产品分页数据
     Page4Navigator<Product> productPage(int cid, int start, int size, int navigatePages);
     //添加商品

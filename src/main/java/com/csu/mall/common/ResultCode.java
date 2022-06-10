@@ -17,6 +17,7 @@ public enum ResultCode implements Serializable {
     ORDER_PAY_ERROR(3001, "库存不足，下单失败"),
     PARAM_LOST_ERROR(2004, "参数缺失"),
     PARAM_PASSWORD_ERROR(2005, "原密码输入错误"),
+    MIAOSHA_OVER_ERROR(500500,"商品秒杀完毕，库存不足!"),
     ;
 
     private final int code;

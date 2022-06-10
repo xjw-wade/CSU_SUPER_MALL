@@ -6,12 +6,15 @@ import com.csu.mall.pojo.Category;
 import com.csu.mall.pojo.Product;
 import com.csu.mall.service.*;
 import com.csu.mall.util.Page4Navigator;
+import com.csu.mall.util.RedisUtil;
 import com.csu.mall.util.SpringContextUtil;
 import org.elasticsearch.index.query.MatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.index.query.functionscore.FunctionScoreQueryBuilder;
 import org.elasticsearch.index.query.functionscore.ScoreFunctionBuilders;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -23,6 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@CacheConfig(cacheNames="products")
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
@@ -38,6 +42,17 @@ public class ProductServiceImpl implements ProductService {
     OrderItemService orderItemService;
     @Autowired
     ReviewService reviewService;
+    @Autowired
+    RedisUtil redisUtil;
+
+    //返回分页对象及其数据
+    @Override
+    public Page4Navigator<Product> productList(int start, int size, int navigatePages) {
+        Sort sort = Sort.by(Sort.Direction.DESC,"id");
+        Pageable pageable = PageRequest.of(start,size,sort);
+        Page pageFromJpa = productRepository.findAll(pageable);
+        return new Page4Navigator<>(pageFromJpa,navigatePages);
+    }
 
     @Override
     public Page4Navigator<Product> productPage(int cid, int start, int size, int navigatePages) {
@@ -181,4 +196,5 @@ public class ProductServiceImpl implements ProductService {
             }
         }
     }
+
 }

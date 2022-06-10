@@ -36,6 +36,8 @@ public class Product {
     private float promotePrice;//优惠价格
     private int stock;//库存
     private Date createDate;//创建日期
+    private Date startDate;//抢购开始日期
+    private Date endDate;//抢购结束日期
 
     //产品图片对象，因为可能一个产品包含多个图片对象，所以这里接收的是序列化的图片对象
     //该字段非数据库所拥有
@@ -57,7 +59,7 @@ public class Product {
     public String toString() {
         return "Product [id=" + id + ", category=" + category + ", name=" + name + ", subTitle=" + subTitle
                 + ", originalPrice=" + originalPrice + ", promotePrice=" + promotePrice + ", stock=" + stock
-                + ", createDate=" + createDate + ", firstProductImage=" + firstProductImage + ", reviewCount="
+                + ", createDate=" + createDate +  ", startDate=" + startDate + ", endDate=" + endDate + ", firstProductImage=" + firstProductImage + ", reviewCount="
                 + reviewCount + ", saleCount=" + saleCount + "]";
     }
 }
