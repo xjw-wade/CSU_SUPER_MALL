@@ -143,13 +143,13 @@ public class OrderController {
     //如果有订单项则获取该对象然后修改里面的数量等等
     //其核心都是为了生成订单项，用于往后生成订单的逻辑作铺垫
     @GetMapping("add_cart")
-    public Result<String> addCart(int pid, int num, HttpServletRequest request) {
+    public Result<String> addCart(@RequestParam("pid") int pid, @RequestParam("num") int num, HttpServletRequest request) {
         buyoneAndAddCart(pid,num,request);
         return Result.createForSuccess("添加购物车成功");
     }
 
     //返回订单项id,用于跳转到对应的订单项页中，利用对应的订单项id生成购买的订单
-    private int buyoneAndAddCart(int pid, int num, HttpServletRequest request) {
+    private int buyoneAndAddCart(@RequestParam("pid") int pid, @RequestParam("num") int num, HttpServletRequest request) {
 
         Product p = productService.getById(pid);
         //读取sessionID

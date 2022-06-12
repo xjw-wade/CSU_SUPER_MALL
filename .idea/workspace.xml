@@ -2,83 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="030ef199-4ab9-4cd0-b0a8-c748dc592d76" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/rabbitmq/MQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/rabbitmq/MQReceiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/rabbitmq/MQSender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/rabbitmq/MiaoshaMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/csu/mall/common/CONSTANT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/common/CONSTANT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/csu/mall/common/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/common/ResultCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/csu/mall/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/csu/mall/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/csu/mall/pojo/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/pojo/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/csu/mall/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/csu/mall/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/csu/mall/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/csu/mall/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/csu/mall/ProductTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/csu/mall/ProductTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/common/CONSTANT$ROLE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/common/CONSTANT$USER_FIELDS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/common/CONSTANT.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/common/Result.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/common/ResultCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/csu/mall/common/ResultCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/comparator/ProductAllComparator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/comparator/ProductDateComparator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/comparator/ProductPriceComparator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/comparator/ProductReviewComparator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/comparator/ProductSaleCountComparator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/config/RedisConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/controller/CategoryController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/controller/OrderController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/controller/ProductController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/controller/ProductImageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/controller/PropertyController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/controller/PropertyValueController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/dto/UpdateUserDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/es/ProductESRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/persistence/OrderItemRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/persistence/OrderRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/persistence/ProductImageRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/persistence/ProductRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/persistence/PropertyRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/persistence/PropertyValueRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/persistence/ReviewRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/persistence/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/pojo/Order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/pojo/OrderItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/pojo/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/csu/mall/pojo/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/pojo/Review.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/pojo/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/service/OrderItemService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/service/OrderService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/service/ProductImageService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/csu/mall/service/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/service/PropertyService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/service/PropertyValueService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/service/ReviewService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/service/impl/OrderItemServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/service/impl/OrderServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/service/impl/ProductImageServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/service/impl/ProductServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/service/impl/PropertyServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/service/impl/PropertyValueServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/service/impl/ReviewServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/service/impl/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/util/CORSFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/util/CookieUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/util/GloabalExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/util/ImageUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/util/MD5Util.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/util/PortUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/util/RedisUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/util/SpringContextUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/util/TokenCacheUtil$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/csu/mall/util/TokenCacheUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/csu/mall/ProductTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/csu/mall/ProductTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -110,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/rabbitmq/MQReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1356">
-              <caret line="75" column="35" lean-forward="true" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
+            <state relative-caret-position="1160">
+              <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -122,8 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/service/impl/OrderServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="85" column="21" lean-forward="true" selection-start-line="85" selection-start-column="21" selection-end-line="85" selection-end-column="21" />
+            <state relative-caret-position="1220">
+              <caret line="85" column="21" selection-start-line="85" selection-start-column="21" selection-end-line="85" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -135,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/service/ProductService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="320">
-              <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+              <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -146,8 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/controller/ProductController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1484">
-              <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+            <state relative-caret-position="410">
+              <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -158,7 +83,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/controller/ProductImageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="2060">
               <caret line="119" column="5" selection-start-line="119" selection-start-column="5" selection-end-line="119" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -170,7 +95,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/rabbitmq/MQConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
+            <state relative-caret-position="440">
               <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -179,10 +104,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
+            <state relative-caret-position="320">
               <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
             </state>
           </provider>
@@ -191,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/service/OrderService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+            <state relative-caret-position="440">
+              <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -200,7 +125,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/rabbitmq/MQSender.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="480">
               <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -209,11 +134,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/controller/OrderController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="94" column="5" lean-forward="true" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
+            <state relative-caret-position="280">
+              <caret line="147" column="50" lean-forward="true" selection-start-line="147" selection-start-column="50" selection-end-line="147" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -306,9 +231,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/service/ProductService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/pojo/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/rabbitmq/MiaoshaMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/controller/OrderController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/rabbitmq/MQReceiver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/csu/mall/controller/OrderController.java" />
       </list>
     </option>
   </component>
@@ -358,8 +283,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -552,6 +475,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -740,7 +665,8 @@
       <workItem from="1654862816383" duration="5432000" />
       <workItem from="1654869662382" duration="3277000" />
       <workItem from="1654873074728" duration="729000" />
-      <workItem from="1654875175443" duration="4126000" />
+      <workItem from="1654875175443" duration="4298000" />
+      <workItem from="1655022021391" duration="66000" />
     </task>
     <servers />
   </component>
@@ -777,7 +703,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140769000" />
+    <option name="totallyTimeSpent" value="141007000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -789,10 +715,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49287748" visible="true" weight="0.33355704" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49287748" visible="true" weight="0.33825505" />
       <window_info id="Structure" order="1" sideWeight="0.5071225" side_tool="true" weight="0.3147651" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -802,13 +728,13 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.46438748" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.46438748" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.46581197" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32905984" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.30341882" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.36609685" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32905984" />
@@ -1132,17 +1058,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/service/OrderService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/rabbitmq/MQReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/rabbitmq/MQConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+        <state relative-caret-position="1160">
+          <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1151,8 +1070,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/service/impl/OrderServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="85" column="21" lean-forward="true" selection-start-line="85" selection-start-column="21" selection-end-line="85" selection-end-column="21" />
+        <state relative-caret-position="1220">
+          <caret line="85" column="21" selection-start-line="85" selection-start-column="21" selection-end-line="85" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1162,27 +1081,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/service/ProductService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
-          <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/controller/OrderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="94" column="5" lean-forward="true" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/controller/ProductController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1484">
-          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1191,7 +1090,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/controller/ProductImageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
+        <state relative-caret-position="2060">
           <caret line="119" column="5" selection-start-line="119" selection-start-column="5" selection-end-line="119" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1199,20 +1098,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/rabbitmq/MQReceiver.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/rabbitmq/MQConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1356">
-          <caret line="75" column="35" lean-forward="true" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/rabbitmq/MQSender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        <state relative-caret-position="440">
+          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1221,8 +1110,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
+        <state relative-caret-position="320">
           <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/service/OrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/rabbitmq/MQSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/controller/ProductController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csu/mall/controller/OrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="147" column="50" lean-forward="true" selection-start-line="147" selection-start-column="50" selection-end-line="147" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
