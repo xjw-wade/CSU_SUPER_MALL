@@ -13,6 +13,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import javax.validation.constraints.NotBlank;
 
 @Data
@@ -54,6 +55,9 @@ public class User {
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime updateTime;
+
+    @Transient
+    private List<Address> addressList;
 
 
     public String getAnonymousName(){

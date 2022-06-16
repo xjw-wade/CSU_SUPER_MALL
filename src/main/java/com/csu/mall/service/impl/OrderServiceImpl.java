@@ -98,6 +98,7 @@ public class OrderServiceImpl implements OrderService {
         List<Order> orders =listByUserAndNotDeleted(user);
         //将订单项的数据填充到对应的订单中，然后返回全部信息= 订单项+订单信息
         orderItemService.fill(orders);
+        removeOrderFromOrderItem(orders);
         return orders;
     }
 

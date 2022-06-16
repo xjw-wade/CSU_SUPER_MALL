@@ -26,16 +26,19 @@ public class Order {
 
     @ManyToOne
     @JoinColumn(name="uid")
-
     private User user;
+
+    @ManyToOne
+    @JoinColumn(name="aid")
+    private Address address;
 
 
     private String orderCode;
-    private String address;
-    private String post;
-    private String receiver;
-    private String mobile;
-    private String userMessage;
+//    private String address;
+//    private String post;
+//    private String receiver;
+//    private String mobile;
+//    private String userMessage;
     private Date createDate;
     private Date payDate;
     private Date deliveryDate;

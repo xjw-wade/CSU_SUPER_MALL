@@ -9,6 +9,7 @@ import com.csu.mall.service.*;
 import com.csu.mall.util.CookieUtil;
 import com.csu.mall.util.Page4Navigator;
 import com.csu.mall.util.RedisUtil;
+import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -32,6 +33,8 @@ public class OrderController {
     ProductImageService productImageService;
     @Autowired
     ReviewService reviewService;
+    @Autowired
+    AddressService addressService;
     @Autowired
     RedisUtil redisUtil;
     @Autowired
@@ -148,8 +151,20 @@ public class OrderController {
         return Result.createForSuccess("添加购物车成功");
     }
 
+    @DeleteMapping("delete_cart")
+    public Result<String> deleteCart(@RequestParam("oiid") int oiid) {
+        OrderItem orderItem = orderItemService.getById(oiid);
+        if (orderItem == null){
+            return Result.createForSuccess("该订单项不存在");
+        }
+        else{
+            orderItemService.deleteById(oiid);
+            return Result.createForSuccess("订单项删除成功");
+        }
+    }
+
     //返回订单项id,用于跳转到对应的订单项页中，利用对应的订单项id生成购买的订单
-    private int buyoneAndAddCart(@RequestParam("pid") int pid, @RequestParam("num") int num, HttpServletRequest request) {
+    private int buyoneAndAddCart(int pid, int num, HttpServletRequest request) {
 
         Product p = productService.getById(pid);
         //读取sessionID
@@ -187,19 +202,21 @@ public class OrderController {
     }
 
     //利用Oiid获得对应订单项，在订单页中读出对应数据
+    //结算后会清空购物车
     @GetMapping("/fore_buy")
-    public Object buy(String[] oiid,HttpServletRequest request){
-        //这里要用字符串数组试图获取多个oiid，而不是int类型仅仅获取一个oiid?
+    public Object buy(@RequestParam("oiids")List<String> oiids, HttpServletRequest request){
+        //这里要用字符串数组试图获取多个oiid，而不是int类型仅仅获取一个oiid
         // 因为根据购物流程环节与表关系，结算页面还需要显示在购物车中选中的多条OrderItem数据，
         // 所以为了兼容从购物车页面跳转过来的需求，要用字符串数组获取多个oiid
         List<OrderItem> orderItems = new ArrayList<>(); //当商品在购物车被多选立即购物时，就需要接收多个OrderItem
         float total = 0;//用于计算总价
-        for (String strid : oiid) {
+        for (String strid : oiids) {
             int id = Integer.parseInt(strid);
             OrderItem oi= orderItemService.getById(id);
             total += oi.getProduct().getPromotePrice()*oi.getNumber();
             //将当前的OrderItem添加到List<OrderItem>中
             orderItems.add(oi);
+            orderItemService.deleteById(id);
         }
         //为每个OrderItem对应的每个产品设置预览图，按顺序，这个设置是单纯的setter
         productImageService.setFirstProdutImagesOnOrderItems(orderItems);
@@ -207,6 +224,7 @@ public class OrderController {
         //读取sessionID
         String loginToken = CookieUtil.readLoginToken(request);
         redisUtil.set(loginToken+"ois", orderItems);
+
 
 
         Map<String,Object> map = new HashMap<>();
@@ -249,11 +267,11 @@ public class OrderController {
             }
         }
         return Result.createForSuccess("修改购物车成功!");
-    }
+}
 
     //创建订单
     @PostMapping("/fore_createOrder")
-    public Result<Object> createOrder(@RequestBody Order order,HttpServletRequest request){
+    public Result<Object> createOrder(@RequestParam("aid") int aid, HttpServletRequest request){
 //        1. 从redis中获取user对象
 //        2. 根据当前时间加上一个4位随机数生成订单号
 //        3. 根据上述参数，创建订单对象
@@ -269,14 +287,20 @@ public class OrderController {
             return Result.createForError("用户未登录");
         }
 
+        Address address = addressService.getById(aid);
+        Order order = new Order();
         String orderCode =  new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()) + RandomUtils.nextInt(1000, 9999);
         order.setOrderCode(orderCode);
         order.setCreateDate(new Date());
         order.setUser(user); //设置user对象，用于设置uid
         order.setStatus(OrderService.waitPay);
+        order.setAddress(address);
         //将每个orderItem的order设置为当前order
         List<OrderItem> orderItemList = (List<OrderItem>)redisUtil.get(loginToken+"ois");
         redisUtil.del(loginToken+"ois");
+        if(orderItemList.size() == 0){
+            return Result.createForSuccess("商品未结算");
+        }
         float total =orderService.sumPrice(order,orderItemList);
 
         Map<String,Object> map = new HashMap<>();
@@ -284,7 +308,6 @@ public class OrderController {
         map.put("total", total);
 
         return Result.createForSuccess(map);
-
     }
 
     //支付成功页面
@@ -308,8 +331,7 @@ public class OrderController {
             return Result.createForError("用户未登录");
         }
         List<Order> os= orderService.listByUserWithoutDelete(user);
-        //设置rder底下的OrderItem的order为Null，避免重复json化。进入死循环
-        orderService.removeOrderFromOrderItem(os);
+
         return Result.createForSuccess(os);
     }
     //确认收货的前提是需要在后台将订单状态设置为已发货才行

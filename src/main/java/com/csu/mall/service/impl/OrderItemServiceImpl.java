@@ -6,6 +6,7 @@ import com.csu.mall.pojo.OrderItem;
 import com.csu.mall.pojo.Product;
 import com.csu.mall.pojo.User;
 import com.csu.mall.service.OrderItemService;
+import com.csu.mall.service.OrderService;
 import com.csu.mall.service.ProductImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
