@@ -118,6 +118,17 @@ public class OrderController {
         return Result.createForSuccess(page);
     }
 
+    @GetMapping("/order")
+    public Result<Object> getById(@RequestParam(value = "oid") int oid) throws Exception {
+        Order order = orderService.getById(oid);
+        if(order == null){
+            return Result.createForError("该订单不存在");
+        }else{
+            orderItemService.fill(order);
+            return Result.createForSuccess(order);
+        }
+    }
+
 
     //发货 订单的增加和删除功能交由前台完成，后台不提供
     // var url =  "deliveryOrder/"+order.id;
@@ -202,7 +213,6 @@ public class OrderController {
     }
 
     //利用Oiid获得对应订单项，在订单页中读出对应数据
-    //结算后会清空购物车
     @GetMapping("/fore_buy")
     public Object buy(@RequestParam("oiids")List<String> oiids, HttpServletRequest request){
         //这里要用字符串数组试图获取多个oiid，而不是int类型仅仅获取一个oiid
@@ -216,7 +226,6 @@ public class OrderController {
             total += oi.getProduct().getPromotePrice()*oi.getNumber();
             //将当前的OrderItem添加到List<OrderItem>中
             orderItems.add(oi);
-            orderItemService.deleteById(id);
         }
         //为每个OrderItem对应的每个产品设置预览图，按顺序，这个设置是单纯的setter
         productImageService.setFirstProdutImagesOnOrderItems(orderItems);
@@ -300,6 +309,9 @@ public class OrderController {
         redisUtil.del(loginToken+"ois");
         if(orderItemList.size() == 0){
             return Result.createForSuccess("商品未结算");
+        }
+        for (OrderItem oi :orderItemList) {
+            orderItemService.deleteById(oi.getId());
         }
         float total =orderService.sumPrice(order,orderItemList);
 
