@@ -2,7 +2,10 @@
 *.class
 
 # 忽略指定文件夹
-.idea/
+/doc/
+/target/
+/.idea/
+/offer.iml
 
 # Log file
 *.log
