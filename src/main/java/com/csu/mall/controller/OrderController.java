@@ -64,6 +64,7 @@ public class OrderController {
                 //在容量为0的时候，那么就打标记为true
                 localMap.put(productId,true);
                 redisUtil.releaseLock(LOCK_ID);
+                redisUtil.incr(String.valueOf(productId),1);
                 return Result.createForError(ResultCode.MIAOSHA_OVER_ERROR.getMsg());
             } else {
                 //5.正常请求，入队，发送一个秒杀message到队列里面去，入队之后客户端应该进行轮询。
