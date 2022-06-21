@@ -131,12 +131,12 @@ public class ProductController implements InitializingBean {
      */
     @Override
     public void afterPropertiesSet() throws Exception {
-//        Sort sort = Sort.by(Sort.Direction.DESC, "id");
-//        Iterable<Product> productLists = productRepository.findAll(sort);
-//        for (Iterator<Product> its = productLists.iterator(); its.hasNext(); ) {
-//            Product product = its.next();
-//            redisUtil.set(String.valueOf(product.getId()), product.getStock(), 3600);
-//        }
+        Sort sort = Sort.by(Sort.Direction.DESC, "id");
+        Iterable<Product> productLists = productRepository.findAll(sort);
+        for (Iterator<Product> its = productLists.iterator(); its.hasNext(); ) {
+            Product product = its.next();
+            redisUtil.set(String.valueOf(product.getId()), product.getStock(), 3600);
+        }
     }
 
 }

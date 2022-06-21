@@ -32,8 +32,8 @@ public class OrderItem {
 
     @ManyToOne
     @JoinColumn(name="uid")
-
     private User user;
+
     //商品订单购买数量
     private int number;
 

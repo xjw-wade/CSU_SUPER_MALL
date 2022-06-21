@@ -72,7 +72,7 @@ public class OrderController {
                 mms.setGoodsId(productId);
                 mQSender.sendMiaoshaMessage(mms);
                 redisUtil.releaseLock(LOCK_ID);
-                return Result.createForSuccess("抢购成功!");
+                return Result.createForSuccess("抢购成功!已加入您的购物车中");
             }
         }else{
             while(lock == false){
@@ -92,7 +92,7 @@ public class OrderController {
                 mms.setGoodsId(productId);
                 mQSender.sendMiaoshaMessage(mms);
                 redisUtil.releaseLock(LOCK_ID);
-                return Result.createForSuccess("抢购成功!");
+                return Result.createForSuccess("抢购成功!已加入您的购物车中");
             }
         }
     }

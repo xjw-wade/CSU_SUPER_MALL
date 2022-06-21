@@ -49,31 +49,30 @@ public class MQReceiver {
 		p.setStock(p.getStock() - 1);
 		productService.update(p);
 
-		List<OrderItem> orderItemList = orderItemService.listByProduct(p);
+		List<OrderItem> orderItemList = orderItemService.listByUser(user);
+		boolean found = false; //默认找不到
+		//第一种情况
+		//基于用户对象user，查询没有生成订单的订单项集合
+		//找到对应的订单项然后进行操作
+		for(OrderItem orderItem:orderItemList){
+			//如果在对应用户对应商品中找到相同的订单项，则对该订单项进行操作
+			if (orderItem.getProduct().getId()==p.getId()){
+				orderItem.setNumber(orderItem.getNumber()+1);
+				//将对应的orderItem对象更新到数据库上
+				orderItemService.update(orderItem);
+				found = true;
+				break;
+			}
+		}
 
-		if (orderItemList == null){
+		//第二种情况 对应用户的购物车内没有找到对应产品的订单项，那么就需要生成一个订单项
+		if (!found){
 			OrderItem orderItem = new OrderItem();
 			orderItem.setUser(user);
 			orderItem.setProduct(p);
 			orderItem.setNumber(1);
-			orderItemList.add(orderItem);
 			orderItemService.add(orderItem);
-		}else{
-			OrderItem orderItem = orderItemList.get(0);
-			orderItem.setNumber(orderItem.getNumber()+1);
-			//将对应的orderItem对象更新到数据库上
-			orderItemList.get(0).setNumber(orderItem.getNumber()+1);
-			orderItemService.update(orderItem);
 		}
-        Order order = new Order();
-		String orderCode =  new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()) + RandomUtils.nextInt(1000, 9999);
-		order.setOrderCode(orderCode);
-		order.setCreateDate(new Date());
-		order.setUser(user); //设置user对象，用于设置uid
-		order.setStatus(OrderService.waitPay);
-		float total =orderService.sumPrice(order,orderItemList);
-		order.setTotal(total);
-		orderService.update(order);
 	}
 	
 	
