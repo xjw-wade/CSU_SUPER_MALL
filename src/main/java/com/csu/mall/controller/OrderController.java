@@ -126,6 +126,7 @@ public class OrderController {
             return Result.createForError("该订单不存在");
         }else{
             orderItemService.fill(order);
+            orderService.removeOrderFromOrderItem(order);
             return Result.createForSuccess(order);
         }
     }
