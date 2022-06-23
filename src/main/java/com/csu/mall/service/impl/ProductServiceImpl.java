@@ -23,6 +23,7 @@ import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilde
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -190,8 +191,11 @@ public class ProductServiceImpl implements ProductService {
         Page<Product> productES = productESRepository.findAll(pageable);
         if (productES.getContent().isEmpty()){
             //数据不存在时，通过dao的方式获取数据并存在es上
-            List<Product> products = productRepository.findAll();
-            for (Product product:products){
+//            List<Product> products = productRepository.findAll();
+            Sort sort = Sort.by(Sort.Direction.DESC, "id");
+            Iterable<Product> productLists = productRepository.findAll(sort);
+            for (Iterator<Product> its = productLists.iterator(); its.hasNext(); ) {
+                Product product = its.next();
                 productESRepository.save(product);
             }
         }

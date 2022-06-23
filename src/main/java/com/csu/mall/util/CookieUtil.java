@@ -15,7 +15,7 @@ public class CookieUtil {
     //static.csustore.com
     //www.csustore.com/product/list
 
-    private final static String COOKIE_DOMAIN = "localhost";
+    private final static String COOKIE_DOMAIN = "jtang.cloud";
     private final static String COOKIE_NAME = "csumall_token";
 
     public static void writeLoginToken(HttpServletResponse response, String token){

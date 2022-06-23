@@ -159,8 +159,64 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.csu.mall.Application</mainClass>
+                    <fork>true</fork>
+                </configuration>
             </plugin>
         </plugins>
+
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/**</include>
+                    <!--                    <include>**/*.properties</include>-->
+                    <!--                    <include>**/*.xml</include>-->
+                    <!--                    <include>**/*.css</include>-->
+                    <!--                    <include>**/*.js</include>-->
+                    <!--                    <include>**/*.html</include>-->
+                    <!--                    <include>**/*.jpg</include>-->
+                    <!--                    <include>**/*.png</include>-->
+                    <!--                    <include>**/*.ttf</include>-->
+                    <!--                    <include>**/*.woff</include>-->
+                    <!--                    <include>**/*.otf</include>-->
+                    <!--                    <include>**/*.eot</include>-->
+                    <!--                    <include>**/*.svg</include>-->
+                    <!--                    <include>**/*.woff2</include>-->
+                    <!--                    <include>**/*.map</include>-->
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.yml</include>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+
+            <!--            <resource>-->
+            <!--                <directory>src/main/resources</directory>-->
+            <!--                <includes>-->
+            <!--                    <include>**/*.yml</include>-->
+            <!--                    <include>**/*.properties</include>-->
+            <!--                    <include>**/*.xml</include>-->
+            <!--                </includes>-->
+            <!--                <filtering>false</filtering>-->
+            <!--            </resource>-->
+        </resources>
     </build>
 
 

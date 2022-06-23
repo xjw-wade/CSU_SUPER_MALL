@@ -9,7 +9,6 @@ import com.csu.mall.service.*;
 import com.csu.mall.util.CookieUtil;
 import com.csu.mall.util.Page4Navigator;
 import com.csu.mall.util.RedisUtil;
-import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

@@ -1,13 +1,14 @@
 #配置Server基本属性
 server:
-  port: 8887
+  port: 8888
   servlet:
     context-path: /csu_super_mall #配置上下文路径，当前路径为本地路径
 
 #配置JDBC属性
 spring:
   datasource:
-    url: jdbc:mysql://106.55.173.219:33100/csu_super_mall?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2b8
+#    url: jdbc:mysql://106.55.173.219:33100/csu_super_mall?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2b8
+    url: jdbc:mysql://192.168.100.251:3310/csu_super_mall?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2b8
     type: com.alibaba.druid.pool.DruidDataSource
     username: root
     password: root
@@ -26,9 +27,9 @@ spring:
 
   #整合redis
   redis:
-    host: 106.55.173.219
-    #    host: 192.168.31.247
-    port: 16381
+#    host: 106.55.173.219
+    host: 192.168.100.251
+    port: 6384
     database: 1
     lettuce:
       pool:
@@ -42,4 +43,5 @@ spring:
 
   elasticsearch:
     rest:
-      uris: http://106.55.173.219:19200
+#      uris: http://106.55.173.219:19200
+       uris: http://192.168.100.251:19200
